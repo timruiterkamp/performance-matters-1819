@@ -1,0 +1,11 @@
+<h1>Hot reddit posts</h1>
+{{#each data}}
+<article class="post">
+  <h3>{{this.title}}</h3>
+  <ul>
+    <li>{{this.subreddit}}</li>
+    <li>{{this.author}}</li>
+  </ul>
+  <img src={{this.thumbnail}} alt={{this.title}} />
+</article>
+{{/each}}

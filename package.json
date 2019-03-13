@@ -1,0 +1,23 @@
+{
+  "name": "performance-matters-1819",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/timruiterkamp/performance-matters-1819.git",
+  "author": "Tim <timruiterkamp@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "handlebars": "^4.1.0",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "snoowrap": "^1.15.2"
+  },
+  "scripts": {
+    "start": "nodemon server",
+    "sass": "node-sass -w sass -o public/styling"
+  }
+}

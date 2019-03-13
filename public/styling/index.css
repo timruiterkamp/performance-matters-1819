@@ -1,0 +1,30 @@
+main {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr; }
+
+.sidebar {
+  background-color: #fafbfc;
+  padding: 1em; }
+  .sidebar h4 {
+    color: #252935;
+    text-decoration: underline;
+    padding-bottom: 1em; }
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0; }
+  .sidebar li {
+    color: #8f9298;
+    font-weight: bold;
+    padding: 1em 1em 1em 4em; }
+    .sidebar li:hover {
+      color: #252935;
+      background-color: #ebedf0; }
+
+.content {
+  padding: 2em; }
+
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; }

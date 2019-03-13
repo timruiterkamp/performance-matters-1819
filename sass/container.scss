@@ -1,0 +1,35 @@
+main {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+}
+
+.sidebar {
+  background-color: #fafbfc;
+  padding: 1em;
+
+  h4 {
+    color: #252935;
+    text-decoration: underline;
+    padding-bottom: 1em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    color: #8f9298;
+    font-weight: bold;
+    padding: 1em 1em 1em 4em;
+
+    &:hover {
+      color: #252935;
+      background-color: #ebedf0;
+    }
+  }
+}
+
+.content {
+  padding: 2em;
+}
