@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
 main {
   display: grid;
   grid-template-columns: 0.3fr 1fr;
@@ -9,8 +11,12 @@ main {
 
   h4 {
     color: #252935;
-    text-decoration: underline;
     padding-bottom: 1em;
+    margin: 4rem 2rem 1rem;
+    font-size: 1.25rem;
+    border-bottom: 1px solid #ebedf0;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
   }
 
   ul {
@@ -22,6 +28,8 @@ main {
     color: #8f9298;
     font-weight: bold;
     padding: 1em 1em 1em 4em;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
 
     &:hover {
       color: #252935;
@@ -31,5 +39,67 @@ main {
 }
 
 .content {
-  padding: 2em;
+  padding: 7rem;
+  box-sizing: border-box;
+
+  h1 {
+    max-width: 84%;
+    margin: 0 auto 2rem;
+  }
+}
+
+.post {
+  height: 120px;
+  border: 1px solid #efefef;
+  padding: 2rem;
+  max-width: 60rem;
+  margin: -1px auto 0;
+
+  display: grid;
+  grid-template-columns: 0.1fr 0.6fr 0.3fr;
+
+  &-detail {
+    max-width: 80rem;
+  }
+
+  &:first-child {
+    border-radius: 5px 5px 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 5px 5px;
+  }
+
+  .meta {
+    padding: 0 2rem;
+    // max-width: 60%
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  img {
+    width: 70%;
+    border-radius: 5px;
+    object-fit: cover;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  h4 {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    font-weight: 100;
+    color: #8a8c90;
+    font-size: 1.25rem;
+  }
 }

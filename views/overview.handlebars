@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+{{#each data}}
+<article class="post">
+  <h4>{{this.score}}</h4>
+
+  <div class="meta">
+    <a href='/{{this.subreddit}}/{{this.id}}'>
+      <h3>{{this.title}}</h3>
+    </a>
+    <ul>
+      <li>{{this.subreddit}}</li>
+      <li>{{this.author}}</li>
+    </ul>
+  </div>
+  <img src={{this.thumbnail}} alt={{this.title}} />
+  </a>
+</article>
+{{/each}}
