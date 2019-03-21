@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 main {
   display: grid;
@@ -15,7 +15,7 @@ main {
     margin: 4rem 2rem 1rem;
     font-size: 1.25rem;
     border-bottom: 1px solid #ebedf0;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
   }
 
@@ -25,10 +25,10 @@ main {
   }
 
   li {
-    color: #8f9298;
+    color: #3a3a3a;
     font-weight: bold;
     padding: 1em 1em 1em 4em;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
 
     &:hover {
