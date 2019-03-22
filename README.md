@@ -60,3 +60,4 @@ The results were very good tho:
 - [ ] Add same static file support for subpages
 - [ ] Add cronjobs
 - [ ] Integrate service workers
+- [ ] Deploy to now
