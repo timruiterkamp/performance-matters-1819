@@ -1,1 +1,11 @@
-{}
+{
+  "version": 2,
+  "name": "performance matters",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/express",
+      "config": { "distDir": "dist" }
+    }
+  ]
+}

@@ -2,6 +2,21 @@
 
 In this subject I'm going to improve the performance of my Reddit application.
 
+!['Homepage'](gh-images/home.png)
+
+#Installation
+
+```bash
+git clone https://github.com/timruiterkamp/performance-matters-1819.git
+cd performance-matters-1819
+yarn or npm install
+yarn start or npm start
+
+visit site on http://localhost:1337
+
+Enjoy!
+```
+
 ## Week 1
 
 This week was all about setting up the API and using server side rendering to display pages.
