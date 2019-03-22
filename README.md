@@ -18,14 +18,18 @@ The first step I focussed on was to minify my scss and javascript files.
 For example, to minify my scss I used the node-sass compressed output, the complete build would look like this:
 
 ```json
- "start": "concurrently \"yarn build\" \"node_modules/.bin/nodemon server\"",
-  "build": "concurrently \"yarn minify-scss\" \"yarn minifyjs\"",
-  "watch": "concurrently \"yarn run sass-watch\" \"yarn minifyjs\"",
-  "clean": "node_modules/.bin/gulp clean",
-  "minifyjs": "node_modules/.bin/gulp minifyJS",
-  "sass": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css",
-  "minify-scss": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css --output-style compressed",
-  "sass-watch": "node_modules/.bin/nodemon -e scss -x npm run sass"
+[
+  {
+    "start": "concurrently \"yarn build\" \"node_modules/.bin/nodemon server\"",
+    "build": "concurrently \"yarn minify-scss\" \"yarn minifyjs\"",
+    "watch": "concurrently \"yarn run sass-watch\" \"yarn minifyjs\"",
+    "clean": "node_modules/.bin/gulp clean",
+    "minifyjs": "node_modules/.bin/gulp minifyJS",
+    "sass": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css",
+    "minify-scss": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css --output-style compressed",
+    "sass-watch": "node_modules/.bin/nodemon -e scss -x npm run sass"
+  }
+]
 ```
 
 I used concurrently to make sure my scripts wouldn't be blocking and run after eachother.  
