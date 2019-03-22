@@ -1,54 +1,58 @@
 # Performance Matters @cmda-minor-web · 2018-2019
 
-In dit vak gaan we de eerder bij de OBA gemaakte client side web applicatie ombouwen naar een server side gerenderde applicatie. Verder gaan we een reeks van optimalisaties doorvoeren om de performance van de applicatie te verbeteren. Uiteindelijk zorgen we ervoor dat de applicatie offline beschikbaar.
+In this subject I'm going to improve the performance of my Reddit application.
 
-## Leerdoelen
-- _Je weet het verschil tussen client side en server side rendering en kan server side rendering toepassen_
-- _Je begrijpt hoe de critical render path werkt, en hoe je deze kan optimaliseren voor een betere runtime en/of perceived performance._
-- _Je begrijpt hoe een Service Worker werkt en kan deze in jou applicatie implementeren._
+## Week 1
 
-[Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vTO-pc2UMvpT0pUjt6NJeckc5N9E7QvCxEfVJW1JjuM0m_9MM8ra05J0s6br486Rocz5JVMhAX_C37_/pubhtml?gid=0&single=true)
+This week was all about setting up the API and using server side rendering to display pages.
 
-## Lesprogramma
+## Week 2
 
-### Week 1 - Server Side rendering
+Improving the performance of my app was my main goal this week. The first test I ran was a normal audit and these were the results:  
+!['First audit'](gh-images/start.png)  
+The time for the first byte is really slow without compression and a quite slow API.
 
-Doel: Webpagina's server side renderen
+### Minification
 
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-1.md)
+The first step I focussed on was to minify my scss and javascript files.
+For example, to minify my scss I used the node-sass compressed output, the complete build would look like this:
 
-[Slides](...)
+```json
+ "start": "concurrently \"yarn build\" \"node_modules/.bin/nodemon server\"",
+  "build": "concurrently \"yarn minify-scss\" \"yarn minifyjs\"",
+  "watch": "concurrently \"yarn run sass-watch\" \"yarn minifyjs\"",
+  "clean": "node_modules/.bin/gulp clean",
+  "minifyjs": "node_modules/.bin/gulp minifyJS",
+  "sass": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css",
+  "minify-scss": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css --output-style compressed",
+  "sass-watch": "node_modules/.bin/nodemon -e scss -x npm run sass"
+```
 
-### Week 2 - Critical Rendering Path  
+I used concurrently to make sure my scripts wouldn't be blocking and run after eachother.  
+The reason I went with base path was that the project will work for everyone, even if you don't have anything installed globally.
 
-Doel: Critical Rendering path optimaliseren
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-2.md)
+Results:
+The time to first byte improved from 2.5 to 2.1 seconds. Which is actually a quite big improvement for just minification.
+!['Minification audit'](gh-images/minification.png)
 
-[Slides](...)
+### Compression & cache
 
-### Week 3 - Going Offline 
+The next step I took was use the shrinkray compression and set the cache headers.
+This was quite a big improvement on the load time, as the speed was decreased to 1.4 seconds. A difference of .7 seconds.
 
-Doel: Webpagina's offline beschikbaar stellen
+!['Compression audit'](gh-images/compression.png)
 
-[Opdrachten](https://github.com/cmda-minor-web/performance-matters-1819/blob/master/week-3.md)
+### Static files
 
-[Slides](...)
+I was not really satisfied with the results as the API was still slow which resulted in the 1.4 seconds delay.  
+So my take on that was to create a static json file which the data would be served from after the first call is made.  
+I still have to make cronjobs to update the files as it will not do another called when the data is generated.
 
+The results were very good tho:  
+!['static-file audit'](gh-images/static-file.png)
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+## To Do
 
-<!-- ☝️ replace this description with a description of your own work -->
-
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
-
-<!-- Maybe a table of contents here? 📚 -->
-
-<!-- How about a section that describes how to install this project? 🤓 -->
-
-<!-- ...but how does one use this project? What are its features 🤔 -->
-
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+- [ ] Add same static file support for subpages
+- [ ] Add cronjobs
+- [ ] Integrate service workers
