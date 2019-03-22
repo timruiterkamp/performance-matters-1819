@@ -4,7 +4,7 @@ In this subject I'm going to improve the performance of my Reddit application.
 
 !['Homepage'](gh-images/home.png)
 
-#Installation
+## Installation
 
 ```bash
 git clone https://github.com/timruiterkamp/performance-matters-1819.git
