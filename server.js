@@ -50,7 +50,7 @@ express()
   .get("/r/:id/:sid", getDetail)
   .get("/r/:id", getSubreddit)
   .get("/", all)
-  .listen(1337);
+  .listen(3001);
 
 function getSubreddit(req, res) {
   const id = req.params.id;

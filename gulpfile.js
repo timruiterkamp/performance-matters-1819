@@ -15,6 +15,10 @@ gulp.task('minifyJS', function() {
     .pipe(gulp.dest('dist/scripts/'))
 })
 
+gulp.task('move', function() {
+  gulp.src('manifest.json', { base: './' }).pipe(gulp.dest('dist/'))
+})
+
 if (process.env.NODE_ENV !== 'production') {
   gulp.watch(['scripts/**/*.js'], gulp.series('minifyJS'))
 }

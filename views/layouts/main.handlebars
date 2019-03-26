@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Performance matters!</title>
-  <link rel="stylesheet" href="styles/min-main.css">
+  <link rel="stylesheet" href="/styles/min-main.css">
+  <link rel="manifest" href="/manifest.json">
 </head>
 
 <body>
@@ -45,6 +46,17 @@
       {{{body}}}
     </section>
   </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(function (registration) {
+            return registration.update();
+          })
+      });
+    }
+  </script>
 </body>
 
 </html>
