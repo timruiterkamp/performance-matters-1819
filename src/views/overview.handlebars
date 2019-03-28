@@ -14,13 +14,17 @@
   </div>
   {{#if this.bigImg}}
   <img src="{{this.bigImg}}" srcset="{{this.bigImg}} 800w,
-{{this.thumbnail}} 600w" sizes="(min-width: 768px) 150px,
-100px" alt={{this.title}} />
+    {{this.thumbnail}} 600w" sizes="(min-width: 768px) 150px,
+    100px" alt={{this.title}} />
   {{else}}
-  <img src="{{this.thumbnail}}" srcset="{{this.thumbnail}} 800w,
-{{this.thumbnail}} 600w" sizes="(min-width: 768px) 150px,
-100px" alt={{this.title}} />
+  {{#if this.thumbnail}}
 
+  <img src="{{this.thumbnail}}" srcset="{{this.thumbnail}} 800w,
+      {{this.thumbnail}} 600w" sizes="(min-width: 768px) 150px,
+      100px" alt={{this.title}} />
+  {{else}}
+  <img src="" alt={{this.title}} />
+  {{/if}}
   {{/if}}
   </a>
 </article>

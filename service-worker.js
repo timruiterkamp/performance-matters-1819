@@ -44,7 +44,6 @@ function precache() {
 }
 
 function update(request) {
-  console.log('update', response)
   return caches.open(CACHE).then(function(cache) {
     return fetch(request).then(function(response) {
       return cache.put(request, response)
