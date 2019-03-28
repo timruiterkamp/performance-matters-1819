@@ -18,9 +18,9 @@ gulp.task('minifyJS', function() {
 gulp.task('move', function() {
   gulp.src('manifest.json', { base: './' }).pipe(gulp.dest('dist/'))
   gulp.src('service-worker.js', { base: './' }).pipe(gulp.dest('dist/'))
-  gulp.src('icons/*', { base: './' }).pipe(gulp.dest('dist/'))
+  return gulp.src('icons/*', { base: './' }).pipe(gulp.dest('dist/'))
 })
 
-if (process.env.NODE_ENV !== 'production') {
-  gulp.watch(['scripts/**/*.js'], gulp.series('minifyJS'))
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   gulp.watch(['scripts/**/*.js'], gulp.series('minifyJS'))
+// }

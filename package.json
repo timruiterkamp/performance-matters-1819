@@ -29,7 +29,15 @@
     "snoowrap": "^1.15.2"
   },
   "scripts": {
-    "start": "node server"
+    "start": "npm run build && node server.js",
+    "build": "npm run minify-scss && npm run minifyjs && npm run move",
+    "watch": "npm run run sass-watch  && npm run minifyjs",
+    "clean": "gulp clean",
+    "move": "gulp move",
+    "minifyjs": "gulp minifyJS",
+    "sass": "node-sass --include-path scss src/sass/index.scss dist/styles/min-main.css",
+    "minify-scss": "node-sass --include-path scss src/sass/index.scss dist/styles/min-main.css --output-style compressed",
+    "sass-watch": "nodemon -e scss -x npm run sass"
   },
   "prettier": {
     "semi": false,
