@@ -4,7 +4,6 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const path = require('path')
 const utils = require('./src/scripts/utils.js')
-const shrinkRay = require('shrink-ray')
 const fs = require('fs')
 require('dotenv').config()
 
@@ -26,24 +25,6 @@ express()
     })
   )
   .use(bodyParser.json())
-  .use(
-    shrinkRay({
-      cache: () => false,
-      cacheSize: false,
-      filter: () => true,
-      brotli: {
-        quality: 4 // between 1 and 11
-      },
-      zlib: {
-        level: 6 // between 1 and 9
-      }
-    })
-  )
-  .use(
-    shrinkRay({
-      filter: req => req.headers['accept'].includes('text/html')
-    })
-  )
   .use((req, res, next) => {
     res.setHeader('Cache-Control', 'max-age=' + 365 * 24 * 60 * 60)
     next()
