@@ -52,7 +52,7 @@ express()
   .get('/r/:id', getSubreddit)
   .get('/offline', getOffline)
   .get('/', all)
-  .listen(3001)
+  .listen(process.env.port || 3001)
 
 function getOffline(req, res) {
   res.render('offline')
