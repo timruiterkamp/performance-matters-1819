@@ -35,8 +35,8 @@
     "clean": "node_modules/.bin/gulp clean",
     "move": "node_modules/.bin/gulp move",
     "minifyjs": "node_modules/.bin/gulp minifyJS",
-    "sass": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css",
-    "minify-scss": "node_modules/.bin/node-sass --include-path scss sass/index.scss dist/styles/min-main.css --output-style compressed",
+    "sass": "node_modules/.bin/node-sass --include-path scss src/sass/index.scss dist/styles/min-main.css",
+    "minify-scss": "node_modules/.bin/node-sass --include-path scss src/sass/index.scss dist/styles/min-main.css --output-style compressed",
     "sass-watch": "node_modules/.bin/nodemon -e scss -x npm run sass"
   },
   "prettier": {
