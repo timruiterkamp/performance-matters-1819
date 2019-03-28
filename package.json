@@ -26,7 +26,6 @@
     "live-server": "^1.2.1",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
-    "shrinkray": "^1.1.2",
     "snoowrap": "^1.15.2"
   },
   "scripts": {
