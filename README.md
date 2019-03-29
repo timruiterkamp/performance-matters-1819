@@ -4,6 +4,10 @@ In this subject I'm going to improve the performance of my Reddit application.
 
 !['Homepage'](gh-images/home.png)
 
+## Live version
+
+The live version can be found at [http://pm-reddit.herokuapp.com](http://pm-reddit.herokuapp.com)
+
 ## Installation
 
 ```bash
