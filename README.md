@@ -70,9 +70,22 @@ I still have to make cronjobs to update the files as it will not do another call
 The results were very good tho:  
 !['static-file audit'](gh-images/static-file.png)
 
+### Service worker
+
+In the last week I implemented a service worker which works with the cache and update way. I got my information from the mozilla service worker cookbook, which has some nice examples.  
+The service worker gives the ability to create meaningfull offline pages and caches the pages you have already loaded which can be then visit with or without internet.
+
+After the service workers was implemented the optimalisation went even further and I brought the loading time back to .3 seconds.
+!['Service worker'](gh-images/service-worker.png)
+
+If the service worker is active and the page can't be loaded because there is no internet, the following message will be displayed:  
+!['Offline page'](gh-images/offline-page.png)
+
+### Further ex
+
 ## To Do
 
 - [ ] Add same static file support for subpages
 - [ ] Add cronjobs
-- [ ] Integrate service workers
-- [ ] Deploy to now
+- [x] Integrate service workers
+- [x] Deploy to heroku
