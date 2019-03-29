@@ -81,7 +81,9 @@ After the service workers was implemented the optimalisation went even further a
 If the service worker is active and the page can't be loaded because there is no internet, the following message will be displayed:  
 !['Offline page'](gh-images/offline-page.png)
 
-### Further ex
+### Further improvement points
+
+- I could make a static html file where it injects the data from the fetch. This would decrease the TTFB.
 
 ## To Do
 
