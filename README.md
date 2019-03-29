@@ -84,6 +84,13 @@ If the service worker is active and the page can't be loaded because there is no
 ### Further improvement points
 
 - I could make a static html file where it injects the data from the fetch. This would decrease the TTFB.
+- Use http2
+
+## Conclusion
+
+After decreasing the critical render path as the last improvement, I made my app go from 2.5 second loading time to 0.2 second loading time. Next to that I improved every other audit step and made it a progressive web app.
+
+!['Result'](gh-images/result.png)
 
 ## To Do
 

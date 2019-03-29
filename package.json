@@ -36,7 +36,7 @@
     "move": "gulp move",
     "minifyjs": "gulp minifyJS",
     "sass": "node-sass --include-path scss src/sass/index.scss dist/styles/min-main.css",
-    "minify-scss": "node-sass --include-path scss src/sass/index.scss dist/styles/min-main.css --output-style compressed",
+    "minify-scss": "node-sass --include-path scss src/sass/index.scss dist/min-main.css --output-style compressed",
     "sass-watch": "nodemon -e scss -x npm run sass"
   },
   "prettier": {
